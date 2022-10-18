@@ -16,11 +16,10 @@ const Categories = {
         operation, // name of the operation ie. 'create', 'update'
         originalDoc, // original document
       }) => {
-        // Add this slug to the historical slugs if not already present
+        // Add the slug to the historical slugs if not already present
         if (!data.slugs.filter(e => e.slug === data.slug).length > 0) {
-          data.slugs.push({slug: data.slug});
+          data.slugs.unshift({slug: data.slug});
         }
-        
         return data;
       } 
     ]
