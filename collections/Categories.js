@@ -1,4 +1,4 @@
-import slugField from "../fields/slug/config";
+import { slug } from "../fields/slug/slug.ts";
 
 const Categories = {
   slug: 'categories',
@@ -13,7 +13,7 @@ const Categories = {
       name: 'name',
       type: 'text',
     },
-    slugField
+    slug({ trackingField: 'name' })
   ],
   timestamps: false,
 }
