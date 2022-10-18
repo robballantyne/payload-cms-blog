@@ -21,6 +21,7 @@ export const slug: Slug = ({ trackingField = 'title' } = {}, overrides) =>
           Field: getSlugInput({ trackingField })
         }
       },
+      
     },
     overrides
   );
