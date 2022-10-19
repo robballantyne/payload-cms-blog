@@ -16,7 +16,7 @@ const Categories = {
         operation, // name of the operation ie. 'create', 'update'
         originalDoc, // original document
       }) => {
-        // Add the slug to the historical slugs if not already present
+        // Add the slug to the assigned slugs array if not already present
         if (!data.slugs.filter(e => e.slug === data.slug).length > 0) {
           data.slugs.unshift({slug: data.slug});
         }
@@ -38,12 +38,15 @@ const Categories = {
         singular: 'Slug',
         plural: 'Slugs',
       },
+      admin: {
+        description: 'To enable redirects to the current slug',
+      },
       fields: [ // required
         {
           name: 'slug',
           type: 'text',
         }
-      ]
+      ],
     }
   ],
   timestamps: false,
